@@ -30,7 +30,7 @@ export default function MyForm(props) {
 
     let d = [...props.arraydata];
 
-    d.push(form);
+    d.push({...form,id: d.length +1});
 
     props.arraysetData(d);
   }
@@ -88,6 +88,7 @@ export default function MyForm(props) {
             name='Address2'
             fullWidth
             variant="standard"
+            onChange={handleChange}
           />
         </DialogContent>
         <DialogActions>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import MyForm from './MyForm';
 import Button from '@mui/material/Button';
+import DisplayData from './DisplayData';
 export default function ParentC() {
     const [open, setOpen] = React.useState(false);
 
@@ -28,6 +29,8 @@ export default function ParentC() {
         arraydata = {data}
         arraysetData={setData}
       />
+
+      <DisplayData rows={data}/>
 
 
 
