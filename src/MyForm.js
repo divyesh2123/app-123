@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -17,6 +17,15 @@ export default function MyForm(props) {
     Address2: "",
     
   })
+
+  useEffect(()=>{
+          let  p = props.arraydata.find((value)=>{
+              return value.id == props.id;
+          });
+
+          setform(p);
+
+  },[])
 
   const handleChange = (e)=>{
 
@@ -54,6 +63,8 @@ export default function MyForm(props) {
             fullWidth
             variant="standard"
             name='firstName'
+
+            value={form.firstName}
             onChange={handleChange}
           />
             <TextField
@@ -65,6 +76,7 @@ export default function MyForm(props) {
             name='lastName'
             fullWidth
             variant="standard"
+            value={form.lastName}
             onChange={handleChange}
           />
 
@@ -77,6 +89,7 @@ export default function MyForm(props) {
             name='Address1'
             fullWidth
             variant="standard"
+            value={form.Address1}
             onChange={handleChange}
           />
 
@@ -88,6 +101,8 @@ export default function MyForm(props) {
             name='Address2'
             fullWidth
             variant="standard"
+
+            value={form.Address2}
             onChange={handleChange}
           />
         </DialogContent>

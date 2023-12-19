@@ -26,11 +26,37 @@ export default function DisplayData(props) {
                   const currentRow = params.row;
                   return alert(JSON.stringify(currentRow, null, 4));
                 };
+
+                const deleterecord = ()=>{
+
+                  let d =[...props.rows];
+                  const currentRow = params.row;
+                  let filterData= d.filter((v)=>{
+
+                    return v.id != currentRow.id;
+                  });
+
+                  props.changeArray(filterData);
+
+                }
+
+                const editrecord = ()=>{ 
+                  const currentRow = params.row;
+
+                  props.setID(currentRow.id);
+
+                }
                 
                 return (
                   <Stack direction="row" spacing={2}>
-                    <Button variant="outlined" color="warning" size="small">Edit</Button>
-                    <Button variant="outlined" color="error" size="small" >Delete</Button>
+                    <Button variant="outlined"
+                     color="warning" size="small"
+                     onClick={editrecord}
+                     >Edit</Button>
+                    <Button variant="outlined"
+                     color="error" size="small" 
+                     onClick={deleterecord}
+                     >Delete</Button>
                   </Stack>
                 );
             }

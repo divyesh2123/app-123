@@ -7,6 +7,8 @@ export default function ParentC() {
 
     const [data,setData]= useState([]);
 
+    const [id,setId] = useState(0);
+
 
     console.log(data);
 
@@ -18,6 +20,14 @@ export default function ParentC() {
       setOpen(false);
     };
 
+    const editd = (id)=>{
+
+      setId(id);
+      setOpen(true);
+
+
+    }
+
   return (
     <div>
          <Button variant="outlined" onClick={handleClickOpen}>
@@ -25,12 +35,16 @@ export default function ParentC() {
       </Button>
 
       <MyForm open={open} handleClose={handleClose}
-
+        id={id}
         arraydata = {data}
         arraysetData={setData}
+
+        setID={setId}
+
       />
 
-      <DisplayData rows={data}/>
+      <DisplayData rows={data}     changeArray={setData} 
+      setID={editd}  />
 
 
 
