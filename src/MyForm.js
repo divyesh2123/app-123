@@ -19,11 +19,19 @@ export default function MyForm(props) {
   })
 
   useEffect(()=>{
+
+           if(props.id)  {
+           
+           
           let  p = props.arraydata.find((value)=>{
               return value.id == props.id;
           });
 
           setform(p);
+
+        }
+
+         
 
   },[])
 
@@ -39,9 +47,33 @@ export default function MyForm(props) {
 
     let d = [...props.arraydata];
 
-    d.push({...form,id: d.length +1});
+    if(props.id  >0)
+    {
+        let p  =d.map((v)=>{
 
-    props.arraysetData(d);
+         if (v.id == props.id)
+         {
+          return {...form,id : v.id}
+
+         }
+         else{
+          return v;
+         }
+        });
+
+
+        props.arraysetData(p);
+      
+    }
+    else
+
+    {
+      d.push({...form,id: d.length +1});
+      props.arraysetData(d);
+     
+    }
+   
+    
   }
 
 
