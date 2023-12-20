@@ -5,11 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MyApp from './MyApp';
 import ParentC from './ParentC';
+import MyFullFormExample from './MyFullFormExample';
+import FullFormFunction from './MyFullFormExample';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ParentC />
+    <FullFormFunction />
   </React.StrictMode>
 );
 
