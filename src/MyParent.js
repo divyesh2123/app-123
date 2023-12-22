@@ -17,6 +17,10 @@ export default function MyParent() {
    
   }
 
+  const d= React.useCallback(()=>{
+
+  },[])
+
   const handleChange = (e)=>{
 
     setInput(e.target.value);
@@ -29,7 +33,7 @@ export default function MyParent() {
       onChange={handleChange}/>
       <button onClick={display}>D</button>
       
-      <MyChild p={{handleChange}}/>
+      <MyChild p={d}/>
     </div>
   )
 }

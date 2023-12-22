@@ -8,12 +8,15 @@ import ParentC from './ParentC';
 import MyFullFormExample from './MyFullFormExample';
 import FullFormFunction from './MyFullFormExample';
 import MyParent from './MyParent';
-import ShowMoreTextToggle from './ShowMoreTextToggle';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ShowMoreTextToggle  text="This is the javascript This is the javascript This is the javascript THis is the javascript This is the javascript THi s is the react"/>
+    <MyParent  />
+  
+  
   </React.StrictMode>
 );
 
