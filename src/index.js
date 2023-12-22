@@ -7,11 +7,13 @@ import MyApp from './MyApp';
 import ParentC from './ParentC';
 import MyFullFormExample from './MyFullFormExample';
 import FullFormFunction from './MyFullFormExample';
+import MyParent from './MyParent';
+import ShowMoreTextToggle from './ShowMoreTextToggle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FullFormFunction />
+    <ShowMoreTextToggle  text="This is the javascript This is the javascript This is the javascript THis is the javascript This is the javascript THi s is the react"/>
   </React.StrictMode>
 );
 
